@@ -1,0 +1,101 @@
+<section class="page-width !py-12">
+  <div class="border-b-1 border-gray-300 flex justify-between">
+    {% comment %} heading  {% endcomment %}
+    <div class="border-b-2 border-blue-500 inline-block">
+      <h2 class="!text-[14px] md:!text-[24px] mt-2 ">{{ section.settings.textarea }}</h2>
+    </div>
+
+    {% comment %} button {% endcomment %}
+    <div class="flex items-center gap-2 hover:text-blue-500 group transition-all duration-150 ">
+      <a href="{{section.settings.btn_link}}">
+        {{ section.settings.btn_text }}
+      </a>
+      {% render 'chevron-right' %}
+    </div>
+  </div>
+
+  {% comment %} product wrapper {% endcomment %}
+  <div class="!grid grid-cols-2 lg:grid-cols-4 mt-12 gap-6 md:gap-12">
+    {% comment %} product {% endcomment %}
+    {% for product in section.settings.product_list %}
+      <div class="border-1 border-gray-200 rounded-2xl overflow-hidden ">
+        {% comment %} image container {% endcomment %}
+        <div class="border-b-1 border-gray-200 overflow-hidden relative">
+          {% if product.available == false %}
+            <div class="bg-gray-200 inline-block absolute top-2 right-2 text-[8px] md:text-[10px] py-1 px-4 rounded-full text-black z-10 !font-[700]">
+              No stocks
+            </div>
+          {% elsif product.compare_at_price %}
+            <div class="bg-blue-500 inline-block absolute top-2 right-2 text-[8px] md:text-[10px] py-1 px-4 rounded-full text-white z-10 !font-[700]">
+              SALE!
+            </div>
+          {% endif %}
+          <a href="{{ product.url }}">
+            <img
+              src="{{ product.featured_image | image_url}}"
+              alt=""
+              height=""
+              width=""
+              class="hover:scale-105 transition-all duration-150"
+            >
+          </a>
+        </div>
+        {% comment %} info container {% endcomment %}
+        <div class="p-6">
+          {% comment %} info wrapper {% endcomment %}
+          <div>
+            <a href="{{product.url}}">
+              <h4 class="hover:underline h-16 !text-[12px] md:!text-[16px]">{{ product.title | truncate: 34 }}</h4>
+            </a>
+            <div class="flex gap-2 items-center">
+              <p class="text-black !font-bold">{{ product.price | money }}</p>
+              {% if product.compare_at_price %}
+                -
+                <p class="text-[12px] line-through mt-1">{{ product.compare_at_price | money }}</p>
+              {% endif %}
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product collection",
+
+  "settings": [
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Products",
+      "limit": 8
+    },
+    {
+      "type": "textarea",
+      "id": "textarea",
+      "label": "textarea",
+      "default": "Grab the best deal on Snowboards"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button text",
+      "default": "Click me"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Product collection"
+    }
+  ]
+}
+{% endschema %}
