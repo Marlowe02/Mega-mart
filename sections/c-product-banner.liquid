@@ -1,17 +1,62 @@
-<p>marlowe</p>
 {% schema %}
 {
   "name": "Product banner",
   "settings": [],
   "blocks": [
     {
-      "type": "product-slide",
-      "name": "Product slide"
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "product_img",
+          "label": "Product image"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_img",
+          "label": "Background image"
+        },
+        {
+          "type": "url",
+          "id": "product_url",
+          "label": "Product url"
+        },
+        {
+          "type": "textarea",
+          "id": "main_text",
+          "label": "Main text",
+          "default": "Mountain snowboards"
+        },
+        {
+          "type": "text",
+          "id": "top_text",
+          "label": "Top sub text",
+          "default": " Best deals on mountain snowboards"
+        },
+        {
+          "type": "text",
+          "id": "bottom_text",
+          "label": "Bottom sub text",
+          "default": "up to 80% discount"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Product banner"
+      "name": "Product banner",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
     }
   ]
 }
