@@ -1,0 +1,40 @@
+<div style="background: {{section.settings.bg_color}};" class="overflow-hidden whitespace-nowrap bg-gray-200 py-3">
+  <div class="marquee flex space-x-8 text-lg font-semibold text-gray-800">
+    {% for i in (1..3) %}
+      <span style="color:{{section.settings.text_color}};" class="marquee-item !text-[14px] ">
+        {{- section.settings.marquee_text -}}
+      </span>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Marquee Text",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "marquee_text",
+      "label": "Enter marquee text",
+      "default": "<p>Welcome to our store! Check out our latest deals.</p>"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee Text"
+    }
+  ]
+}
+{% endschema %}

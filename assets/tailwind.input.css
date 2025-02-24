@@ -1,1 +1,25 @@
 @import 'tailwindcss';
+
+/* announcement-bar */
+.marquee {
+  display: flex;
+  animation: marquee-scroll 17s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  white-space: nowrap;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+/* announcement-bar */
