@@ -57,6 +57,49 @@
         "show_text_below": false
       }
     },
+    "c_brand_marquee_76BACb": {
+      "type": "c-brand-marquee",
+      "blocks": {
+        "brand_74Htw8": {
+          "type": "brand",
+          "settings": {
+            "brand_img": "shopify://shop_images/logoipsum-335.svg"
+          }
+        },
+        "brand_hbEUwj": {
+          "type": "brand",
+          "settings": {
+            "brand_img": "shopify://shop_images/logoipsum-342.svg"
+          }
+        },
+        "brand_KpC6yq": {
+          "type": "brand",
+          "settings": {
+            "brand_img": "shopify://shop_images/logoipsum-337.svg"
+          }
+        },
+        "brand_TyekgW": {
+          "type": "brand",
+          "settings": {
+            "brand_img": "shopify://shop_images/logoipsum-348.svg"
+          }
+        },
+        "brand_g9wcJC": {
+          "type": "brand",
+          "settings": {
+            "brand_img": "shopify://shop_images/logoipsum-360.svg"
+          }
+        }
+      },
+      "block_order": [
+        "brand_74Htw8",
+        "brand_hbEUwj",
+        "brand_KpC6yq",
+        "brand_TyekgW",
+        "brand_g9wcJC"
+      ],
+      "settings": {}
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -229,6 +272,7 @@
   },
   "order": [
     "image_banner",
+    "c_brand_marquee_76BACb",
     "rich_text",
     "c_deals_collection_AGJ4pw",
     "c_collection_list_8pKAc3",

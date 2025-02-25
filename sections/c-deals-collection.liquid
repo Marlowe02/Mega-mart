@@ -22,11 +22,11 @@
         {% comment %} image container {% endcomment %}
         <div class="border-b-1 border-gray-200 overflow-hidden relative">
           {% if product.available == false %}
-            <div class="bg-gray-200 inline-block absolute top-2 right-2 text-[8px] md:text-[10px] py-1 px-4 rounded-full text-black z-10 !font-[700]">
+            <div class="bg-gray-200 inline-block absolute top-2 right-2 text-[8px] md:text-[10px] py-1 px-4 rounded-full text-black z-2 !font-[700]">
               No stocks
             </div>
           {% elsif product.compare_at_price %}
-            <div class="bg-blue-500 inline-block absolute top-2 right-2 text-[8px] md:text-[10px] py-1 px-4 rounded-full text-white z-10 !font-[700]">
+            <div class="bg-blue-500 inline-block absolute top-2 right-2 text-[8px] md:text-[10px] py-1 px-4 rounded-full text-white z-2 !font-[700]">
               SALE!
             </div>
           {% endif %}
@@ -65,7 +65,9 @@
 {% schema %}
 {
   "name": "Product collection",
-
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
   "settings": [
     {
       "type": "product_list",

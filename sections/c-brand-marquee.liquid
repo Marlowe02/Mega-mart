@@ -1,0 +1,93 @@
+<section class="flex overflow-hidden space-x-16 !py-4 ">
+  <div class="flex space-x-16 animate-loop-scroll">
+    {% for block in section.blocks %}
+      {% if block.type == 'brand' %}
+        {% if block.settings.brand_img != blank %}
+          <img src="{{ block.settings.brand_img |  image_url  }}" alt="" width="" height="" class="max-w-none ">
+
+        {% else %}
+          <img src="{{'logoipsum-360.svg' |  asset_url  }}" alt="" width="" height="" class="max-w-none">
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="flex space-x-16 animate-loop-scroll">
+    {% for block in section.blocks %}
+      {% if block.type == 'brand' %}
+        {% if block.settings.brand_img != blank %}
+          <img src="{{ block.settings.brand_img |  image_url  }}" alt="" width="" height="" class="max-w-none">
+
+        {% else %}
+          <img src="{{'logoipsum-360.svg' |  asset_url  }}" alt="" width="" height="" class="max-w-none">
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="flex space-x-16 animate-loop-scroll">
+    {% for block in section.blocks %}
+      {% if block.type == 'brand' %}
+        {% if block.settings.brand_img != blank %}
+          <img src="{{ block.settings.brand_img |  image_url  }}" alt="" width="" height="" class="max-w-none">
+
+        {% else %}
+          <img src="{{'logoipsum-360.svg' |  asset_url  }}" alt="" width="" height="" class="max-w-none">
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="flex space-x-16 animate-loop-scroll">
+    {% for block in section.blocks %}
+      {% if block.type == 'brand' %}
+        {% if block.settings.brand_img != blank %}
+          <img src="{{ block.settings.brand_img |  image_url  }}" alt="" width="" height="" class="max-w-none">
+
+        {% else %}
+          <img src="{{'logoipsum-360.svg' |  asset_url  }}" alt="" width="" height="" class="max-w-none">
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Brand marquee",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "brand",
+      "name": "Brand",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "brand_img",
+          "label": "Brand logo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand marquee",
+      "blocks": [
+        {
+          "type": "brand"
+        },
+        {
+          "type": "brand"
+        },
+        {
+          "type": "brand"
+        },
+        {
+          "type": "brand"
+        },
+        {
+          "type": "brand"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
