@@ -1,0 +1,45 @@
+<section class="page-width !py-2">
+  <div class="flex !gap-4">
+    {% for link in section.settings.link_list.links %}
+      {% if link.links != blank %}
+        <div>
+          <button class="flex !gap-2 justify-center items-center py-1 px-4 border border-blue-500 rounded-full !text-[12px] bg-blue-100/50 !font-bold group hover:text-white hover:bg-blue-500 duration-150 transition-all">
+            {{ link.title }}
+            {% render 'chevron-right-navigation' %}
+          </button>
+          <a href=""></a>
+        </div>
+      {% else %}
+        <a
+          href=""
+          class=" py-1 px-4 border border-blue-500 rounded-full !text-[12px] bg-blue-100/50 !font-bold group hover:text-white hover:bg-blue-500 duration-150 transition-all"
+        >
+          {{- link.title -}}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Navigation",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Menu links"
+    },
+    {
+      "type": "link_list",
+      "id": "link_list",
+      "label": "Menu links"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Navigation"
+    }
+  ]
+}
+{% endschema %}
